@@ -1,0 +1,392 @@
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+*::selection {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    height: 4rem;
+    border-bottom: 0.05rem solid rgb(255, 255, 255);
+    z-index: 10;
+}
+.navbar {
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+.check {
+    display: none;
+}
+.checkbtn {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+.nav-item a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.45rem 0.5rem;
+    color: rgb(255, 255, 255);
+}
+.nav-item a:hover, .nav-item a:active {
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.logo img {
+    vertical-align: middle;
+}
+.main {
+    flex: 1;
+}
+.box-div-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    margin-bottom: 1.25rem;
+    vertical-align: middle;
+}
+.box-div-son {
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 1.25rem;
+    display: inline-block;
+}
+.box-div-son-h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+}
+.box-div-son-p {
+    font-style: italic;
+    font-size: 1.35rem;
+}
+.post {
+    color:rgb(255, 255, 255);
+    transition: box-shadow 0.25s ease;
+    background-color: rgb(15, 15, 15);
+    padding: 4rem 1rem 4rem 1rem;
+    border-top: 0.05rem solid rgb(255, 255, 255);
+    border-bottom: 0.05rem solid rgb(255, 255, 255);
+}
+.post:first-child {
+    margin-top: 4rem;
+}
+.post h2 {
+    width: max-content;
+    font-style: italic;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+.post h2:hover {
+    opacity: 0.5;
+}
+.p-interests {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 135%;
+}
+.h3-interests, .ul-interests {
+    display: none;
+}
+.box-div {
+    padding-left: 3.75%;
+    padding-right: 3.75%;
+}
+.box-div p {
+    padding-bottom: 1.5rem;
+}
+.box-div .p1 {
+    font-size: 125%;
+}
+.box-div .p2 {
+    font-size: 125%;
+    color:rgb(165, 165, 165);
+}
+.box-div .p3 {
+    font-size: 125%;
+    color:rgb(100, 100, 100);
+}
+.p1-short {
+    display: none;
+}
+.p3 span {
+    font-style: oblique;
+    font-weight: bold;
+}
+.contenedor-imagenes {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contenedor-imagenes .imagen {
+    width: 26%;
+    position: relative;
+    height: 26rem;
+    margin-bottom: 4rem;
+    border-top: 0.05rem solid rgb(255, 255, 255);
+    border-bottom: 0.05rem solid rgb(255, 255, 255);
+    border-left: 0.05rem solid rgb(255, 255, 255);
+    border-right: 0.05rem solid rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.imagen img {
+    border-radius: 0.5rem;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(128,128,128, 0.75);
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.overlay p {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: left;;
+    transform: translate(-50%, -50%);
+}
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.imagen:hover .overlay {
+    height: 100%;
+}
+.imagen:active .overlay {
+    box-shadow: 0.4rem 0.4rem rgba(128, 128, 128, 0.5);
+}
+.btn {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: none;
+    z-index: 1;
+    border-top: 0.25rem solid rgb(128,128,128);
+    border-bottom: 0.25rem solid rgb(128,128,128);
+    border-left: 0.25rem solid rgb(128,128,128);
+    border-right: 0.25rem solid rgb(128,128,128);
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.btn:active {
+    background-color: rgb(128,128,128);
+    border-top: 0.25rem solid rgb(255,255,255);
+    border-bottom: 0.25rem solid rgb(255,255,255);
+    border-left: 0.25rem solid rgb(255,255,255);
+    border-right: 0.25rem solid rgb(255,255,255);
+}
+.footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: max-content;
+}
+.footer-div-1 {
+    width: inherit;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.footer-div-2 {
+    width: inherit;
+    display: flex;
+}
+.footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.15rem;
+}
+.footer a {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.footer h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 0.5rem;
+}
+.footer h2:hover {
+    text-decoration: overline underline;
+}
+.footer a:hover {
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+@media screen and (max-width:1024px) {
+    .contenedor-imagenes {
+        justify-content: space-between;
+        width: 95%;
+    }
+    .p-interests {
+        display: none;
+    }
+    .p1-long {
+        display: none;
+    }
+    .p1-short {
+        display: flex;
+    }
+    .h3-interests {
+        display: flex;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 135%;
+    }
+    .ul-interests {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding-top: 1rem;
+        padding-left: 1rem;
+    }
+    .ul-interests li {
+        font-weight: bold;
+        font-style: italic;
+        padding-bottom: 0.5rem;
+        font-size: 135%;
+    }
+    .footer span {
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+    .contenedor-imagenes {
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen {
+        width: 45%;
+    }
+    .box-div-image {
+        width: 100%;
+        height: 75%;
+        margin-bottom: 2rem;
+    }
+    .box-div-son {
+        display: none;
+    }
+    .box-div {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
+@media screen and (max-width:480px) {
+    .box-div {
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+    .checkbtn {
+        display: inline-block;
+    }
+    .nav-links {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: max-content;
+        background: rgb(128,128,128);
+        top: 4rem;
+        left: -100%;
+        overflow: scroll;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+        border-bottom: 0.25rem solid rgb(255, 255, 255);
+        transition: all .5s;
+        z-index: 5;
+    }
+    .nav-item {
+        margin: 0 auto;
+        width: max-content;
+        z-index: 10;
+    }
+    .nav-item a:first-child {
+        margin-top: 1rem;
+    }
+    .nav-item a {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .nav-item a:hover, .nav-item a:active {
+        background: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    #check:checked ~ .nav-links {
+        left: 0;
+    }
+    .contenedor-imagenes {
+        width: 98%;
+        justify-content: space-around;
+    }
+    .contenedor-imagenes .imagen {
+        width: 80%;
+    }
+    .box-div-son-h1 span {
+        display: none;
+    }
+    .footer-div-1, .footer-div-2, .footer p {
+        display: grid;
+    }
+    .footer a {
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .footer-div-2 {
+        margin-bottom: 2rem;
+    }
+    .btn {
+        width: 1.6rem;
+        height: 1.6rem;
+        bottom: 1rem;
+        right: 0.5rem;
+    }
+}
