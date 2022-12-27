@@ -1,2 +1,2 @@
-# My CV online
+# CV online
 My CV online... etc. etc.
